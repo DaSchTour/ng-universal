@@ -1,1 +1,1 @@
-export * from './lib/tokens';
+export * from './dist/tokens';
