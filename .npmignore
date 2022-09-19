@@ -1,6 +1,5 @@
 # source
 lib
-index.ts
 package-lock.json
 tslint.json
 renovate.json
@@ -19,3 +18,4 @@ schematics/install/tests
 .DS_Store
 .circleci
 .github
+rollup.config.ts

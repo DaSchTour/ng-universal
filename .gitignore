@@ -17,6 +17,7 @@ npm-debug.log
 
 # source
 dist
+tokens
 
 # schematics
 schematics/install/*.js

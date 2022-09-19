@@ -1,13 +1,13 @@
 {
   "name": "@nestjs-fixed/ng-universal",
-  "version": "6.1.2",
+  "version": "6.2.3",
   "description": "Nest - modern, fast, powerful node.js web framework (@ng-universal)",
   "author": "Kamil Mysliwiec",
   "license": "MIT",
   "scripts": {
     "test:schematics": "jest --run-in-band --silent",
     "build": "npm run build:lib && npm run build:schematics",
-    "build:lib": "tsc -p tsconfig.json",
+    "build:lib": "rollup --config rollup.config.ts --configPlugin typescript",
     "build:schematics": "tsc -p tsconfig.schematics.json",
     "precommit": "lint-staged",
     "prepublish:npm": "npm run build",
@@ -24,6 +24,8 @@
     "@nguniversal/common": "^12.0.0 || ^13.0.0 || ^14.0.0",
     "@nguniversal/express-engine": "^12.0.0 || ^13.0.0 || ^14.0.0",
     "express": "^4.17.1",
+    "memory-cache": "0.2.0",
+    "reflect-metadata": "~0.1.13",
     "zone.js": "^0.11.0"
   },
   "devDependencies": {
@@ -35,6 +37,7 @@
     "@nestjs/core": "9.0.11",
     "@nguniversal/common": "14.0.0",
     "@nguniversal/express-engine": "14.0.0",
+    "@rollup/plugin-typescript": "^8.5.0",
     "@types/jest": "27.5.2",
     "@types/memory-cache": "0.2.2",
     "@types/node": "16.11.59",
@@ -43,17 +46,15 @@
     "jest": "27.5.1",
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
+    "rollup-plugin-dts": "^4.2.2",
     "ts-jest": "27.1.5",
     "ts-morph": "16.0.0",
     "typescript": "4.8.3",
     "zone.js": "0.11.8"
   },
   "dependencies": {
-    "@angular-devkit/schematics": "14.0.1",
-    "@schematics/angular": "14.0.1",
-    "@nguniversal/common": "14.0.0",
-    "@nguniversal/express-engine": "14.0.0",
-    "memory-cache": "0.2.0"
+    "@angular-devkit/schematics": "^14.0.1",
+    "@schematics/angular": "^14.0.1"
   },
   "schematics": "./schematics/collection.json",
   "lint-staged": {
@@ -65,6 +66,35 @@
     "hooks": {
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "sideEffects": false,
+  "fesm2020": "./dist/index.mjs",
+  "fesm2015": "./dist/index.mjs",
+  "esm2020": "./dist/index.mjs",
+  "typings": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "es2020": "./dist/index.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "esm2020": "./dist/index.mjs",
+      "es2020": "./dist/index.mjs",
+      "es2015": "./dist/index.mjs",
+      "node": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "esm2020": "./dist/tokens.mjs",
+      "es2020": "./dist/tokens.mjs",
+      "es2015": "./dist/tokens.mjs",
+      "node": "./dist/tokens.js",
+      "default": "./dist/tokens.js"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
@@ -10,8 +10,9 @@
     "target": "es6",
     "sourceMap": false,
     "outDir": "./dist",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": false
   },
-  "include": ["lib/**/*", "../index.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "include": ["lib/**/*.ts", "../index.ts", "../token.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "dist/"]
 }
