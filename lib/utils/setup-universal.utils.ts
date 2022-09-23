@@ -10,6 +10,7 @@ const DEFAULT_CACHE_EXPIRATION_TIME = 60000; // 60 seconds
 const logger = new Logger('AngularUniversalModule');
 
 export function setupUniversal(app: any, ngOptions: AngularUniversalOptions) {
+  try {
   const cacheOptions = getCacheOptions(ngOptions);
 
   app.engine('html', (_, options, callback) => {
@@ -60,6 +61,9 @@ export function setupUniversal(app: any, ngOptions: AngularUniversalOptions) {
       maxAge: 600
     })
   );
+  } catch (error) {
+    throw error;
+  }
 }
 
 export function getCacheOptions(ngOptions: AngularUniversalOptions) {
