@@ -1,6 +1,6 @@
 {
   "name": "@nestjs-fixed/ng-universal",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Nest - modern, fast, powerful node.js web framework (@ng-universal)",
   "author": "Kamil Mysliwiec",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "@nestjs/core": "9.2.1",
     "@nguniversal/common": "15.1.0",
     "@nguniversal/express-engine": "15.0.0",
+    "@rollup/plugin-typescript": "^8.5.0",
     "@types/jest": "27.5.2",
     "@types/memory-cache": "0.2.2",
     "@types/node": "18.11.9",

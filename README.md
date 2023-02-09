@@ -30,16 +30,10 @@ Angular [Universal](https://github.com/angular/universal) module for [Nest](http
 
 ## Installation
 
-Using the Angular CLI:
+Till the issue [#573](https://github.com/nestjs/ng-universal/issues/573) is resolved and the original package does not work as described in the readme you can use this packages as a drop-in replacement. Simply add the following line to your `package.json`.
 
-```bash
-$ ng add @nestjs/ng-universal
 ```
-
-Or manually:
-
-```bash
-$ npm i @nestjs/ng-universal
+"@nestjs/ng-universal": "npm:@nestjs-fixed/ng-universal@7.0.1",
 ```
 
 ## Example
