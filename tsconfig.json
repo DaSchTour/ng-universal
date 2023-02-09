@@ -11,7 +11,9 @@
     "sourceMap": false,
     "outDir": "./dist",
     "skipLibCheck": true,
-    "declaration": false
+    "declaration": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": ["lib/**/*.ts", "../index.ts", "../token.ts"],
   "exclude": ["node_modules", "**/*.spec.ts", "dist/"]

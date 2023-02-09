@@ -1,8 +1,8 @@
+import { existsSync } from 'fs';
+import { join } from 'path';
 import { APP_BASE_HREF } from '@angular/common';
 import { DynamicModule, Inject, Module, OnModuleInit } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
-import { existsSync } from 'fs';
-import { join } from 'path';
 import 'reflect-metadata';
 import { ANGULAR_UNIVERSAL_OPTIONS } from './angular-universal.constants';
 import { angularUniversalProviders } from './angular-universal.providers';
@@ -15,7 +15,7 @@ export class AngularUniversalModule implements OnModuleInit {
   constructor(
     @Inject(ANGULAR_UNIVERSAL_OPTIONS)
     private readonly ngOptions: AngularUniversalOptions,
-    private readonly httpAdapterHost: HttpAdapterHost
+    private readonly httpAdapterHost: HttpAdapterHost // eslint-disable-next-line no-empty-function
   ) {}
 
   static forRoot(options: AngularUniversalOptions): DynamicModule {
@@ -42,7 +42,7 @@ export class AngularUniversalModule implements OnModuleInit {
     };
   }
 
-  async onModuleInit() {
+  onModuleInit() {
     if (!this.httpAdapterHost) {
       return;
     }
