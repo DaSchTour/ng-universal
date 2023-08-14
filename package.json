@@ -34,7 +34,7 @@
     "@commitlint/config-angular": "17.4.2",
     "@nestjs/common": "9.2.1",
     "@nestjs/core": "9.2.1",
-    "@nguniversal/common": "15.1.0",
+    "@nguniversal/common": "15.2.1",
     "@nguniversal/express-engine": "15.0.0",
     "@rollup/plugin-typescript": "^8.5.0",
     "@types/jest": "29.2.3",
